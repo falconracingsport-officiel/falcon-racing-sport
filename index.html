@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#10141d">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<link rel="icon" type="image/png" href="icons/icon-192.png">
+<title>Falcon Racing Sport — Championship 2025</title>
+<style>
+:root{--bg:#0b0f16;--panel:#151c28;--panel2:#1c2635;--line:#2b3749;--txt:#f3f6fb;--muted:#9eacc0;--red:#e63946;--blue:#2d8cff;--gold:#f4c542}
+*{box-sizing:border-box}body{margin:0;background:linear-gradient(160deg,#111a29,#080b11 55%);color:var(--txt);font:15px system-ui,-apple-system,Segoe UI,Roboto,sans-serif;padding-bottom:88px}
+header{padding:22px 16px 18px;background:linear-gradient(110deg,#171f2d,#111722);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:5}
+.brand{display:flex;align-items:center;gap:11px}.crest{width:43px;height:43px;border-radius:12px;background:linear-gradient(135deg,#e63946,#a30d21);display:grid;place-items:center;font-weight:1000;font-style:italic;box-shadow:0 5px 20px #e6394644}.brand h1{font-size:17px;line-height:1.1;margin:0;letter-spacing:.5px}.brand small{color:#aebbd0;font-size:10px;letter-spacing:2px}
+.season{margin-top:13px;display:flex;justify-content:space-between;align-items:center;color:var(--muted);font-size:12px}.season b{color:var(--gold)}
+main{max-width:760px;margin:auto;padding:15px 13px}.tabs{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;margin:0 0 15px}.tab{border:1px solid var(--line);background:#131a25;color:var(--muted);border-radius:10px;padding:11px 3px;font-weight:700;font-size:12px}.tab.active{background:#8e1724;border-color:#e63946;color:white}
+.panel{background:linear-gradient(145deg,#182130,#121923);border:1px solid var(--line);border-radius:15px;padding:15px;margin-bottom:13px;box-shadow:0 8px 24px #0002}.panel h2{font-size:17px;margin:0 0 12px}.muted{color:var(--muted)}.tiny{font-size:11px;color:var(--muted)}.row{display:flex;gap:9px;align-items:center}.between{justify-content:space-between}.field{display:flex;flex-direction:column;gap:5px;flex:1;min-width:0}label{font-size:12px;color:var(--muted)}input,select{width:100%;background:#0d131d;border:1px solid #344155;border-radius:9px;color:white;padding:11px;font:inherit;min-width:0}button{border:0;border-radius:10px;padding:11px 13px;background:var(--red);color:#fff;font-weight:800;font-size:13px}button.secondary{background:#263448;border:1px solid #3a4b62}button.danger{background:#51212a;border:1px solid #85313d}.full{width:100%}
+.statgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.stat{background:#0e1520;border:1px solid var(--line);border-radius:11px;padding:11px}.stat strong{font-size:22px;display:block}.stat span{font-size:10px;color:var(--muted)}
+table{width:100%;border-collapse:collapse;font-size:13px}th{text-align:left;color:var(--muted);font-size:10px;text-transform:uppercase;letter-spacing:.7px;padding:9px 5px;border-bottom:1px solid var(--line)}td{padding:10px 5px;border-bottom:1px solid #283344}tr:last-child td{border-bottom:0}.rank{font-weight:900;width:28px}.p1{color:#f5cf50}.p2{color:#c8d2df}.p3{color:#ce8b5a}.pts{font-weight:900;text-align:right}.team{display:inline-flex;align-items:center;gap:6px;font-size:11px;color:#c5d0df}.logo{display:inline-grid;place-items:center;width:27px;height:22px;border-radius:6px;font-size:9px;font-weight:1000;color:white;letter-spacing:-.4px}
+.driverline{display:grid;grid-template-columns:1fr 1fr 35px;gap:7px;margin-bottom:8px;align-items:center}.driverline button{padding:8px 4px}.raceitem{display:flex;align-items:center;gap:10px;padding:11px 0;border-bottom:1px solid #293446}.raceitem:last-child{border:0}.round{width:29px;height:29px;border-radius:8px;background:#28364a;display:grid;place-items:center;font-weight:900;font-size:12px}.raceitem .info{flex:1;min-width:0}.raceitem strong{display:block;font-size:13px}.raceitem small{color:var(--muted);font-size:11px}.status{font-size:10px;padding:5px 7px;border-radius:20px;background:#263448;color:#b7c5d8}.status.done{background:#123d32;color:#73e0b4}
+.resultrow{display:grid;grid-template-columns:1fr 92px;gap:8px;align-items:center;margin:8px 0}.resultrow .who{font-size:13px;display:flex;align-items:center;gap:7px}.resultrow select{padding:9px}
+.notice{padding:10px 11px;border-radius:10px;background:#332a12;color:#f6df9a;font-size:12px;line-height:1.45;margin-bottom:12px;border:1px solid #655321}
+.empty{text-align:center;padding:25px 10px;color:var(--muted)}.hidden{display:none!important}.foot{position:fixed;bottom:0;left:0;right:0;background:#0c1119ee;border-top:1px solid var(--line);padding:10px 13px calc(10px + env(safe-area-inset-bottom));display:flex;gap:8px;justify-content:center;z-index:8}.foot button{flex:1;max-width:240px}
+@media(min-width:600px){main{padding:20px}.tabs{gap:10px}.tab{font-size:14px}.panel{padding:18px}}
+</style>
+</head>
+<body>
+<header>
+ <div class="brand"><div class="crest">FRS</div><div><h1>FALCON RACING SPORT</h1><small>CHAMPIONSHIP • 2025</small></div></div>
+ <div class="season"><span>SAISON MULTIJOUEUR</span><b>🏁 FORMULA POINTS</b></div>
+</header>
+<main>
+ <div class="tabs">
+  <button class="tab active" data-tab="classement">🏆 Classement</button>
+  <button class="tab" data-tab="courses">🏁 Courses</button>
+  <button class="tab" data-tab="pilotes">👤 Pilotes</button>
+  <button class="tab" data-tab="regles">⚙️ Réglages</button>
+ </div>
+
+ <section id="classement">
+  <div class="panel">
+   <div class="row between"><h2>Championnat pilotes</h2><span class="tiny" id="raceCount">0 / 24 GP</span></div>
+   <div class="statgrid">
+    <div class="stat"><strong id="statDrivers">0</strong><span>PILOTES</span></div>
+    <div class="stat"><strong id="statRaces">0</strong><span>GP TERMINÉS</span></div>
+    <div class="stat"><strong id="statLeader">—</strong><span>LEADER (PTS)</span></div>
+   </div>
+  </div>
+  <div class="panel">
+   <h2>Classement général</h2>
+   <div id="leaderboard"></div>
+  </div>
+  <div class="panel">
+   <h2>Dernier Grand Prix</h2><div id="lastRace" class="muted tiny">Aucun résultat enregistré.</div>
+  </div>
+ </section>
+
+ <section id="courses" class="hidden">
+  <div class="panel">
+   <h2>Calendrier F1 25</h2>
+   <div class="notice">Le calendrier officiel F1 2025 compte 24 Grands Prix. Tu avais demandé 22 circuits : j'ai conservé les 24 courses dans l'ordre du calendrier du jeu pour ne pas supprimer arbitrairement deux manches. Tu peux désactiver les deux courses que tu ne souhaites pas disputer dans Réglages.</div>
+   <div id="raceList"></div>
+  </div>
+  <div class="panel hidden" id="raceEditor">
+   <div class="row between"><div><div class="tiny" id="editRound">GRAND PRIX</div><h2 id="editName">Course</h2></div><button class="secondary" id="closeEditor">Fermer</button></div>
+   <div class="tiny" style="margin-bottom:12px">Choisis la position d'arrivée de chaque pilote. Les points sont attribués automatiquement.</div>
+   <div id="resultInputs"></div>
+   <div class="panel" style="padding:11px;margin:12px 0;background:#101824">
+    <div class="field"><label>🏁 Meilleur tour en course — bonus de +1 point</label>
+     <select id="fastestLapDriver"><option value="">Aucun bonus pour ce GP</option></select>
+     <span class="tiny">Choisis le pilote ayant réalisé le meilleur tour. Le point bonus sera ajouté à son total.</span>
+    </div>
+   </div>
+   <button class="full" id="saveRace">Enregistrer les résultats</button>
+   <button class="full danger" id="deleteRace" style="margin-top:8px">Effacer les résultats de ce GP</button>
+  </div>
+ </section>
+
+ <section id="pilotes" class="hidden">
+  <div class="panel">
+   <h2>Ajouter un concurrent</h2>
+   <div class="field"><label>Nom ou pseudo du pilote</label><input id="driverName" maxlength="24" placeholder="Ex. Olivier"></div>
+   <div class="field" style="margin-top:9px"><label>Écurie / marque de voiture</label><select id="driverTeam"></select></div>
+   <button class="full" id="addDriver" style="margin-top:12px">＋ Ajouter le pilote</button>
+   <p class="tiny">10 concurrents maximum. Les écussons colorés reprennent les couleurs et initiales des écuries.</p>
+  </div>
+  <div class="panel"><h2>Grille des pilotes</h2><div id="driverList"></div></div>
+ </section>
+
+ <section id="regles" class="hidden">
+  <div class="panel">
+   <h2>Barème des points</h2>
+   <table><thead><tr><th>Position</th><th>Points</th><th>Position</th><th>Points</th></tr></thead><tbody>
+    <tr><td>🥇 1er</td><td>25</td><td>🥈 2e</td><td>18</td></tr>
+    <tr><td>🥉 3e</td><td>15</td><td>4e</td><td>12</td></tr>
+    <tr><td>5e</td><td>10</td><td>6e</td><td>8</td></tr>
+    <tr><td>7e</td><td>6</td><td>8e</td><td>4</td></tr>
+    <tr><td>9e</td><td>2</td><td>10e</td><td>1</td></tr>
+   </tbody></table>
+   <p class="tiny">Bonus facultatif : +1 point au pilote choisi pour le meilleur tour de chaque GP. En cas d’égalité au championnat : meilleur nombre de victoires, puis de 2e places, puis de 3e places.</p>
+  </div>
+  <div class="panel">
+   <h2>Calendrier personnalisé</h2>
+   <p class="tiny">Décoche les deux circuits que tu ne souhaites pas intégrer pour passer à 22 manches. Les résultats des circuits désactivés restent conservés.</p>
+   <div id="calendarToggles"></div>
+  </div>
+  <div class="panel">
+   <h2>Sauvegarde du championnat</h2>
+   <p class="tiny">Les données sont enregistrées sur ce téléphone et dans ce navigateur.</p>
+   <div class="row"><button class="secondary" id="exportData" style="flex:1">Exporter sauvegarde</button><button class="secondary" id="importBtn" style="flex:1">Importer</button></div>
+   <input type="file" id="importFile" accept="application/json" class="hidden">
+   <button class="danger full" id="resetAll" style="margin-top:12px">Réinitialiser le championnat</button>
+  </div>
+ </section>
+</main>
+<div class="foot"><button class="secondary" id="exportQuick">⬇ Sauvegarder</button><button id="goRace">＋ Saisir un GP</button></div>
+<script>
+const teams=[
+ ['McLaren','MCL','#ff8700'],['Ferrari','FER','#e10600'],['Mercedes','MER','#00a19c'],['Red Bull','RBR','#243b8a'],
+ ['Williams','WIL','#0878c9'],['Aston Martin','AMR','#00665e'],['Racing Bulls','VCARB','#6699ff'],['Haas','HAA','#eeeeee'],
+ ['Alpine','ALP','#ff69b4'],['Sauber','SAU','#52e252']
+];
+const calendar=[
+ ['Australie','Melbourne'],['Chine','Shanghai'],['Japon','Suzuka'],['Bahreïn','Sakhir'],['Arabie saoudite','Djeddah'],['États-Unis','Miami'],
+ ['Italie','Imola'],['Monaco','Monte-Carlo'],['Espagne','Barcelone'],['Canada','Montréal'],['Autriche','Spielberg'],['Grande-Bretagne','Silverstone'],
+ ['Belgique','Spa-Francorchamps'],['Hongrie','Budapest'],['Pays-Bas','Zandvoort'],['Italie','Monza'],['Azerbaïdjan','Bakou'],['Singapour','Marina Bay'],
+ ['États-Unis','Austin'],['Mexique','Mexico'],['Brésil','São Paulo'],['États-Unis','Las Vegas'],['Qatar','Lusail'],['Abou Dhabi','Yas Marina']
+];
+const points=[25,18,15,12,10,8,6,4,2,1];
+const defaults={drivers:[],results:{},enabled:calendar.map((_,i)=>i),version:1};
+let data=load(), currentRace=null;
+function load(){try{return {...defaults,...JSON.parse(localStorage.getItem('frs_f1_25')||'{}')}}catch(e){return structuredClone(defaults)}}
+function save(){localStorage.setItem('frs_f1_25',JSON.stringify(data));render()}
+function esc(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function logo(team){let t=teams.find(x=>x[0]===team)||teams[0];return `<span class="logo" style="background:${t[2]};color:${t[0]==='Haas'?'#10141d':'white'}">${t[1]}</span>`}
+function standings(){
+ return data.drivers.map(d=>{let total=0,wins=0,seconds=0,thirds=0;Object.values(data.results).forEach(r=>{let p=r[d.id];if(p){let n=Number(p);if(n<=10)total+=points[n-1];if(n===1)wins++;if(n===2)seconds++;if(n===3)thirds++}});let fastestLaps=0;Object.values(data.results).forEach(r=>{if(r&&r._fastestLap===d.id){total++;fastestLaps++}});return {...d,total,wins,seconds,thirds,fastestLaps}})
+ .sort((a,b)=>b.total-a.total||b.wins-a.wins||b.seconds-a.seconds||b.thirds-a.thirds||a.name.localeCompare(b.name,'fr'));
+}
+function render(){
+ const s=standings(), completed=Object.keys(data.results).filter(k=>data.results[k]&&Object.keys(data.results[k]).length).length;
+ document.getElementById('statDrivers').textContent=data.drivers.length;
+ document.getElementById('statRaces').textContent=completed;
+ document.getElementById('statLeader').textContent=s[0]?s[0].total:'—';
+ document.getElementById('raceCount').textContent=`${completed} / ${data.enabled.length} GP`;
+ document.getElementById('leaderboard').innerHTML=s.length?`<table><thead><tr><th>#</th><th>Pilote / Écurie</th><th>V</th><th>MT</th><th class="pts">PTS</th></tr></thead><tbody>${s.map((d,i)=>`<tr><td class="rank ${i===0?'p1':i===1?'p2':i===2?'p3':''}">${i+1}</td><td><strong>${esc(d.name)}</strong><br><span class="team">${logo(d.team)} ${esc(d.team)}</span></td><td>${d.wins}</td><td>${d.fastestLaps}</td><td class="pts">${d.total}</td></tr>`).join('')}</tbody></table>`:'<div class="empty">Ajoute tes pilotes pour afficher le classement.</div>';
+ const last=Object.keys(data.results).filter(k=>Object.keys(data.results[k]||{}).length).sort((a,b)=>Number(b)-Number(a))[0];
+ document.getElementById('lastRace').innerHTML=last===undefined?'Aucun résultat enregistré.':`<b>${calendar[last][0]} — ${calendar[last][1]}</b><br><span class="tiny">${Object.entries(data.results[last]).map(([id,p])=>{let d=data.drivers.find(x=>x.id===id);return d?`${esc(d.name)} : P${p}`:''}).filter(Boolean).join(' • ')}</span>`;
+ document.getElementById('raceList').innerHTML=calendar.map((r,i)=>`<div class="raceitem"><div class="round">${String(i+1).padStart(2,'0')}</div><div class="info"><strong>${esc(r[0])} — ${esc(r[1])}</strong><small>${data.results[i]&&Object.keys(data.results[i]).length?'Résultats enregistrés':'En attente'}${data.enabled.includes(i)?'':' • Hors championnat'}</small></div><span class="status ${data.results[i]&&Object.keys(data.results[i]).length?'done':''}">${data.results[i]&&Object.keys(data.results[i]).length?'TERMINÉ':'À FAIRE'}</span><button class="secondary" onclick="openRace(${i})">Saisir</button></div>`).join('');
+ document.getElementById('driverList').innerHTML=data.drivers.length?data.drivers.map(d=>`<div class="driverline"><div><b>${esc(d.name)}</b><div class="team">${logo(d.team)} ${esc(d.team)}</div></div><span class="tiny">${standings().find(x=>x.id===d.id)?.total||0} pts</span><button class="danger" onclick="removeDriver('${d.id}')">✕</button></div>`).join(''):'<div class="empty">Aucun pilote pour le moment.</div>';
+ document.getElementById('calendarToggles').innerHTML=calendar.map((r,i)=>`<label class="raceitem" style="cursor:pointer"><input type="checkbox" style="width:18px" ${data.enabled.includes(i)?'checked':''} onchange="toggleRace(${i},this.checked)"><span class="info"><strong>${i+1}. ${esc(r[0])} — ${esc(r[1])}</strong></span></label>`).join('');
+}
+function openRace(i){currentRace=i;document.getElementById('raceEditor').classList.remove('hidden');document.getElementById('editRound').textContent=`GRAND PRIX ${String(i+1).padStart(2,'0')}`;document.getElementById('editName').textContent=`${calendar[i][0]} — ${calendar[i][1]}`;
+ let old=data.results[i]||{};document.getElementById('resultInputs').innerHTML=data.drivers.length?data.drivers.map(d=>`<div class="resultrow"><div class="who">${logo(d.team)}<span>${esc(d.name)}</span></div><select data-driver="${d.id}"><option value="">Non classé / absent</option>${Array.from({length:data.drivers.length},(_,n)=>`<option value="${n+1}" ${Number(old[d.id])===n+1?'selected':''}>${n+1}${n===0?'er':'e'} place</option>`).join('')}</select></div>`).join(''):'<div class="empty">Ajoute d’abord les pilotes dans l’onglet Pilotes.</div>';
+ document.getElementById('fastestLapDriver').innerHTML='<option value="">Aucun bonus pour ce GP</option>'+data.drivers.map(d=>`<option value="${d.id}" ${old._fastestLap===d.id?'selected':''}>${esc(d.name)} — ${esc(d.team)}</option>`).join('');
+ document.getElementById('raceEditor').scrollIntoView({behavior:'smooth'});
+}
+function removeDriver(id){if(!confirm('Supprimer ce pilote et ses résultats ?'))return;data.drivers=data.drivers.filter(d=>d.id!==id);Object.keys(data.results).forEach(k=>delete data.results[k][id]);save()}
+function toggleRace(i,on){data.enabled=on?[...data.enabled,i].sort((a,b)=>a-b):data.enabled.filter(x=>x!==i);save()}
+document.querySelectorAll('.tab').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('.tab').forEach(x=>x.classList.toggle('active',x===b));['classement','courses','pilotes','regles'].forEach(id=>document.getElementById(id).classList.toggle('hidden',id!==b.dataset.tab));}));
+document.getElementById('driverTeam').innerHTML=teams.map(t=>`<option>${t[0]}</option>`).join('');
+document.getElementById('addDriver').onclick=()=>{let name=document.getElementById('driverName').value.trim();if(!name)return alert('Entre un nom de pilote.');if(data.drivers.length>=10)return alert('Maximum 10 pilotes.');if(data.drivers.some(d=>d.name.toLowerCase()===name.toLowerCase()))return alert('Ce nom existe déjà.');data.drivers.push({id:Date.now().toString(36)+Math.random().toString(36).slice(2,6),name,team:document.getElementById('driverTeam').value});document.getElementById('driverName').value='';save()};
+document.getElementById('closeEditor').onclick=()=>document.getElementById('raceEditor').classList.add('hidden');
+document.getElementById('saveRace').onclick=()=>{if(currentRace===null)return;let selects=[...document.querySelectorAll('#resultInputs select')],vals=selects.map(x=>x.value).filter(Boolean);if(new Set(vals).size!==vals.length)return alert('Deux pilotes ne peuvent pas avoir la même position.');let result={};selects.forEach(x=>{if(x.value)result[x.dataset.driver]=Number(x.value)});if(!Object.keys(result).length)return alert('Saisis au moins une position.');let fastest=document.getElementById('fastestLapDriver').value;if(fastest&&!result[fastest])return alert('Le pilote du meilleur tour doit aussi avoir une position d’arrivée enregistrée.');if(fastest)result._fastestLap=fastest;data.results[currentRace]=result;save();document.getElementById('raceEditor').classList.add('hidden');alert('Résultats enregistrés ! Le classement est actualisé, avec le bonus du meilleur tour si sélectionné.')};
+document.getElementById('deleteRace').onclick=()=>{if(currentRace!==null&&confirm('Effacer les résultats de ce Grand Prix ?')){delete data.results[currentRace];save();document.getElementById('raceEditor').classList.add('hidden')}};
+function download(){let blob=new Blob([JSON.stringify(data,null,2)],{type:'application/json'}),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='Falcon-Racing-Sport-Championship-2025.json';a.click();URL.revokeObjectURL(a.href)}
+document.getElementById('exportData').onclick=download;document.getElementById('exportQuick').onclick=download;
+document.getElementById('importBtn').onclick=()=>document.getElementById('importFile').click();
+document.getElementById('importFile').onchange=async e=>{let f=e.target.files[0];if(!f)return;try{let d=JSON.parse(await f.text());if(!Array.isArray(d.drivers)||!d.results)throw Error();data={...defaults,...d};save();alert('Sauvegarde importée.')}catch(err){alert('Fichier de sauvegarde invalide.')}e.target.value=''};
+document.getElementById('resetAll').onclick=()=>{if(confirm('Effacer tous les pilotes, courses et résultats ? Cette action est définitive.')){data=structuredClone(defaults);save();document.getElementById('raceEditor').classList.add('hidden')}};
+document.getElementById('goRace').onclick=()=>{document.querySelector('[data-tab="courses"]').click();let next=data.enabled.find(i=>!data.results[i]||!Object.keys(data.results[i]).length);openRace(next===undefined?data.enabled[0]:next)};
+render();
+if('serviceWorker' in navigator && location.protocol.startsWith('http')){window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));}
+</script>
+</body></html>

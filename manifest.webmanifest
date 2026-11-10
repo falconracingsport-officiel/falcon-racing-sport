@@ -1,0 +1,17 @@
+{
+  "id": "./",
+  "name": "Falcon Racing Sport Championship 2025",
+  "short_name": "Falcon Racing",
+  "description": "Gestion de championnat automobile entre amis : pilotes, Grands Prix et points.",
+  "lang": "fr-FR",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0b0f16",
+  "theme_color": "#10141d",
+  "icons": [
+    {"src": "./icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable"},
+    {"src": "./icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable"}
+  ]
+}
